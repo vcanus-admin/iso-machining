@@ -2,6 +2,7 @@
  - x, y, z, u, v, w, a, b, c
  
 # NCBlock
+`
  - Integer type
  - MachiningProject
  - Workplan
@@ -20,6 +21,7 @@
  - NCBlock nextBlock
  - String ncCode
  - BehaviorNCBlock behaviorNCBlock
+`
  
  `
  enum E_NCBLOCK_TYPE
