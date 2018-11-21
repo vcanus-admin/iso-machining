@@ -391,5 +391,41 @@
 		DIAMOND_KNURL				= 24033,
 		TOOL_KNURL					= 24034
 	};
- ` 
-### T
+	`
+### Two5dManufacturingFeature extends ManufacturingFeature
+ - Axis2Placement3d featurePlacement
+ 
+#### MachiningFeature extends Two5dManufacturingFeature
+ - TolerancedLengthMeasure depth
+ - TolerancedLengthMeasure planarRadius
+ - TolerancedLengthMeasure orthogonalRadius
+ 
+##### RoundHole extends MachiningFeature
+ - TolerancedLengthMeasure diameter
+ - TaperSelect changeInDiameter
+ - BottomCondition bottomCondition
+ 
+### Region extends ManufacturingFeature
+ - Axis2Placement3d featurePlacement
+ 
+### TransitionFeature extends ManufacturingFeature
+ - MachiningFeature firstFeature
+ - MachiningFeature secondFeature
+ 
+#### TurningFeature extends Two5dManufacturingFeature
+ - List<Curve> curvesOfFeature
+ 
+### MillingMachiningOperation extends MachiningOperation
+ - ApproachRetractStrategy approach
+ - ApproachRetractStrategy retract
+ 
+#### MillingTypeOperation extends MillingMachiningOperation
+
+### RapidMovement extends WorkingStep, Operation
+
+#### RapidMovementReturnHome extends RapidMovement
+ - Point viaPoint
+
+#### RapidMovementSecPlane extends RapidMovement
+ - Vector direction
+ - Surface secPlane
